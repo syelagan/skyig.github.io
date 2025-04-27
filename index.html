@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SKY IG Smart Carbon Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Home Page -->
+<div id="homePage" class="section">
+  <h1>🌎 SKY IG Smart Carbon Calculator</h1>
+  <p>This app helps individuals and small offices track their monthly carbon footprint from electricity, transport, waste, and LPG usage.</p>
+  <p><strong>Prepared by: Yelagandala Suneel Kumar (Project Test)</strong></p>
+  <button class="btn" onclick="selectSurvey('household')">Start Household Survey</button>
+  <button class="btn" onclick="selectSurvey('office')">Start Office Survey</button>
+</div>
+
+<!-- Household Form -->
+<div id="householdForm" class="section hidden">
+  <h2>🏠 Household Carbon Survey</h2>
+  Full Name: <input type="text" id="fullName">
+  Location: <input type="text" id="location">
+  Select Month: <input type="month" id="surveyMonth">
+  Electricity Usage (kWh/month): <input type="number" id="electricity">
+  Transport Distance (km/month): <input type="number" id="transport">
+  Waste Generated (kg/week): <input type="number" id="waste">
+  LPG Cylinders (per month): <input type="number" id="lpg">
+  <button class="btn" onclick="submitHousehold()">Submit Household Survey</button>
+</div>
+
+<!-- Office Form -->
+<div id="officeForm" class="section hidden">
+  <h2>🏢 Office Carbon Survey</h2>
+  Office Name: <input type="text" id="officeName">
+  Location: <input type="text" id="officeLocation">
+  Select Month: <input type="month" id="officeSurveyMonth">
+  Electricity Usage (kWh/month): <input type="number" id="officeElectricity">
+  Transport Distance (km/month): <input type="number" id="officeTransport">
+  Waste Generated (kg/week): <input type="number" id="officeWaste">
+  <button class="btn" onclick="submitOffice()">Submit Office Survey</button>
+</div>
+
+<!-- Results -->
+<div id="results" class="section hidden">
+  <h2 id="resultTitle"></h2>
+  <table id="resultTable"></table>
+  <canvas id="emissionsChart" style="margin-top: 20px;"></canvas>
+  <div id="scopeDetails"></div>
+  <div id="observations"></div>
+  <div id="recommendations"></div>
+  <button class="btn" onclick="goHome()">🏠 Go Home</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
